@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import volunteer from "./assets/volunteer.jpeg";
+import { FaFacebook, FaTwitterSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
 
 function App() {
+  const volun = {
+    image: volunteer,
+    name: "WhatSoEver",
+    designation: "Member",
+    desc: "loremscnakjdncsndvnlksdkvnkjsdnvkdsvksndvkjnskjdvkjsdvusiudvjdsvmbdsasdbkjasdlkasoidaosdlksa"
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card" style={{ width: "18rem" }}>
+      <div className="position-relative image">
+        <img src={volun.image} className="card-img-top " alt="..." />
+        <div className="social-icons">
+          <a href="#!" className="social-icon"><FaFacebook /></a>
+          <a href="#!" className="social-icon"><FaTwitterSquare /></a>
+          <a href="#!" className="social-icon"><FaInstagram /></a>
+          <a href="#!" className="social-icon"><FaLinkedin /></a>
+        </div>
+      </div>
+      <div className="card-body">
+        <a href="#!"><h5 className="card-title">{volun.name}</h5></a>
+        <p className="card-text">{volun.designation}</p>
+        <p className="card-text">{volun.desc}</p>
+      </div>
     </div>
   );
 }
